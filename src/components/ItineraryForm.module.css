@@ -1,6 +1,6 @@
 .card {
-  background: rgba(26, 26, 36, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
   border-radius: 20px;
   padding: 40px;
   backdrop-filter: blur(20px);
@@ -32,7 +32,7 @@
   font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(240, 237, 232, 0.45);
+  color: var(--muted);
   font-weight: 500;
 }
 
@@ -44,8 +44,8 @@
 }
 
 .select {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--surface2);
+  border: 1px solid var(--border);
   border-radius: 10px;
   color: var(--text);
   font-family: 'DM Sans', sans-serif;
@@ -58,12 +58,12 @@
 }
 
 .select:focus {
-  border-color: rgba(255, 60, 95, 0.5);
-  background: rgba(255, 60, 95, 0.05);
+  border-color: rgba(201, 79, 106, 0.5);
+  background: rgba(201, 79, 106, 0.04);
 }
 
 .select option {
-  background: #1a1a24;
+  background: var(--surface);
 }
 
 .chips {
@@ -75,9 +75,9 @@
 .chip {
   padding: 7px 14px;
   border-radius: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  background: rgba(255, 255, 255, 0.03);
-  color: rgba(240, 237, 232, 0.45);
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--muted);
   font-size: 0.82rem;
   cursor: pointer;
   transition: all 0.2s;
@@ -86,21 +86,21 @@
 }
 
 .chip:hover {
-  border-color: rgba(255, 60, 95, 0.4);
+  border-color: rgba(201, 79, 106, 0.4);
   color: var(--text);
 }
 
 .chip.active {
-  background: rgba(255, 60, 95, 0.15);
+  background: rgba(201, 79, 106, 0.12);
   border-color: var(--neon);
-  color: var(--text);
+  color: var(--neon);
 }
 
 .submit {
   width: 100%;
   margin-top: 32px;
   padding: 18px;
-  background: linear-gradient(135deg, #ff3c5f 0%, #ff8c42 100%);
+  background: linear-gradient(135deg, #c94f6a 0%, #2b4f9e 100%);
   border: none;
   border-radius: 12px;
   color: white;

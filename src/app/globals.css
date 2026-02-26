@@ -7,20 +7,20 @@
 }
 
 :root {
-  --bg: #0a0a0f;
-  --surface: #111118;
-  --surface2: #1a1a24;
-  --border: rgba(255, 255, 255, 0.07);
-  --neon: #ff3c5f;
-  --neon2: #ff8c42;
-  --gold: #e8c97a;
-  --text: #f0ede8;
-  --muted: rgba(240, 237, 232, 0.45);
-  --card-bg: rgba(26, 26, 36, 0.8);
+  --bg: #f4f1e8;
+  --surface: #ffffff;
+  --surface2: #edeae0;
+  --border: rgba(30, 25, 20, 0.1);
+  --neon: #c94f6a;
+  --neon2: #2b4f9e;
+  --gold: #b8832a;
+  --text: #1a1818;
+  --muted: rgba(26, 24, 24, 0.45);
+  --card-bg: rgba(255, 255, 255, 0.92);
 }
 
 html {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {

@@ -1,6 +1,7 @@
 'use client'
 
-import { Itinerary, ItineraryForm } from '@/lib/types'
+import { useState } from 'react'
+import { Itinerary, ItineraryForm, Meal } from '@/lib/types'
 import styles from './ItineraryResult.module.css'
 
 interface Props {
@@ -10,13 +11,15 @@ interface Props {
 }
 
 const TIME_COLORS: Record<string, string> = {
-  Breakfast: '#58a6ff',
-  Lunch: '#3fb950',
-  Dinner: '#ff8c42',
-  'Late Night': '#bc8cff',
+  Breakfast: '#2b70c9',
+  Lunch: '#3d8c5a',
+  Dinner: '#c94f6a',
+  'Late Night': '#6b4fa0',
 }
 
 export default function ItineraryResult({ itinerary, form, onReset }: Props) {
+  const [mapMeal, setMapMeal] = useState<Meal | null>(null)
+
   return (
     <div className={styles.wrap}>
       <div className={styles.header}>
@@ -59,6 +62,12 @@ export default function ItineraryResult({ itinerary, form, onReset }: Props) {
               <div className={styles.mealMeta}>
                 <div className={styles.area}>{meal.area}</div>
                 <div className={styles.price}>{meal.price}</div>
+                <button
+                  className={styles.mapBtn}
+                  onClick={() => setMapMeal(meal)}
+                >
+                  Google Maps
+                </button>
                 <a
                   className={styles.reserveBtn}
                   href={`https://tableall.com/en/search?q=${encodeURIComponent(meal.name + ' Tokyo')}`}
@@ -72,6 +81,33 @@ export default function ItineraryResult({ itinerary, form, onReset }: Props) {
           ))}
         </div>
       ))}
+
+      {mapMeal && (
+        <div className={styles.mapOverlay} onClick={() => setMapMeal(null)}>
+          <div className={styles.mapModal} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.mapModalHeader}>
+              <span className={styles.mapModalTitle}>{mapMeal.name}</span>
+              <button className={styles.mapModalClose} onClick={() => setMapMeal(null)}>✕</button>
+            </div>
+            <iframe
+              className={styles.mapFrame}
+              src={`https://maps.google.com/maps?q=${encodeURIComponent(mapMeal.name + ' ' + mapMeal.area + ' Tokyo')}&output=embed`}
+              allowFullScreen
+              loading="lazy"
+            />
+            <div className={styles.mapModalFooter}>
+              <a
+                className={styles.mapOpenLink}
+                href={`https://www.google.com/maps/search/${encodeURIComponent(mapMeal.name + ' ' + mapMeal.area + ' Tokyo')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Google Mapsで開く →
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
