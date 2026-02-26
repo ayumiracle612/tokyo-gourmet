@@ -1,0 +1,194 @@
+.wrap {
+  animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.summary {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.resetBtn {
+  padding: 8px 18px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: transparent;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.resetBtn:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--text);
+}
+
+.dayBlock {
+  margin-bottom: 44px;
+}
+
+.dayLabel {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--neon);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.dayLabel::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
+  margin-left: 12px;
+}
+
+.dayTheme {
+  color: rgba(232, 201, 122, 0.7);
+  font-style: italic;
+}
+
+.mealCard {
+  background: rgba(26, 26, 36, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 12px;
+  backdrop-filter: blur(10px);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 20px;
+  align-items: start;
+  transition: border-color 0.2s;
+}
+
+.mealCard:hover {
+  border-color: rgba(255, 60, 95, 0.2);
+}
+
+@media (max-width: 600px) {
+  .mealCard {
+    grid-template-columns: 1fr;
+  }
+  .mealMeta {
+    text-align: left !important;
+  }
+}
+
+.mealTime {
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  white-space: nowrap;
+  border: 1px solid;
+  align-self: flex-start;
+}
+
+.mealBody {
+  min-width: 0;
+}
+
+.cuisine {
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.mealName {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.mealDesc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.tip {
+  margin-top: 10px;
+  background: rgba(232, 201, 122, 0.06);
+  border: 1px solid rgba(232, 201, 122, 0.15);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  color: rgba(232, 201, 122, 0.75);
+  line-height: 1.6;
+}
+
+.mealMeta {
+  text-align: right;
+  font-size: 0.8rem;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.area {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.75rem;
+}
+
+.price {
+  color: var(--gold);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.reserveBtn {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: rgba(255, 140, 66, 0.12);
+  border: 1px solid rgba(255, 140, 66, 0.3);
+  color: var(--neon2);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.reserveBtn:hover {
+  background: rgba(255, 140, 66, 0.25);
+  border-color: var(--neon2);
+}
