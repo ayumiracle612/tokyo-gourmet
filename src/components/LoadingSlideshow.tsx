@@ -54,8 +54,8 @@ export default function LoadingSlideshow() {
       timeout = setTimeout(() => {
         setCurrent((c) => (c + 1) % SLIDES.length)
         setVisible(true)
-      }, 400)
-    }, 3200)
+      }, 500)
+    }, 3500)
 
     return () => {
       clearInterval(interval)
@@ -67,15 +67,19 @@ export default function LoadingSlideshow() {
 
   return (
     <div className={styles.wrap}>
-      <div className={`${styles.slide} ${visible ? styles.visible : styles.hidden}`}>
+      {/* Slide content */}
+      <div className={`${styles.content} ${visible ? styles.visible : styles.hidden}`}>
         <div className={styles.illustration}>
-          <span className={styles.kanji}>{slide.kanji}</span>
+          <span className={styles.kanjiBack}>{slide.kanji}</span>
           <span className={styles.emoji}>{slide.emoji}</span>
         </div>
-        <h3 className={styles.title}>{slide.title}</h3>
+
+        <p className={styles.counter}>Tokyo Tip {current + 1} / {SLIDES.length}</p>
+        <h2 className={styles.title}>{slide.title}</h2>
         <p className={styles.tip}>{slide.tip}</p>
       </div>
 
+      {/* Progress indicators */}
       <div className={styles.progress}>
         {SLIDES.map((_, i) => (
           <div
