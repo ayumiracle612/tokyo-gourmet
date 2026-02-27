@@ -18,7 +18,7 @@ export interface Meal {
   area: string
   price: string
   description: string
-  tip: string
+  tip?: string
 }
 
 export interface Day {
@@ -29,5 +29,5 @@ export interface Day {
 
 export interface Itinerary {
   days: Day[]
-  summary: string
+  summary?: string
 }

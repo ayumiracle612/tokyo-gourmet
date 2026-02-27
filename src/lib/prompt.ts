@@ -21,7 +21,7 @@ Respond ONLY with a valid JSON object. No markdown, no explanation, no extra tex
   "days": [
     {
       "day": 1,
-      "theme": "short evocative theme (e.g. 'Old Tokyo & Street Food')",
+      "theme": "short theme (e.g. 'Old Tokyo & Street Food')",
       "meals": [
         {
           "time": "Breakfast",
@@ -29,15 +29,12 @@ Respond ONLY with a valid JSON object. No markdown, no explanation, no extra tex
           "cuisine": "specific cuisine type",
           "area": "neighborhood name",
           "price": "¥XXX–¥XXX per person",
-          "description": "2 vivid sentences: what makes this place special and what to order",
-          "tip": "one specific local insider tip (best seat, what to avoid, best time to go, etc.)"
+          "description": "1 sentence: what makes this place special and what to order"
         }
       ]
     }
-  ],
-  "summary": "One evocative sentence capturing the overall trip vibe"
+  ]
 }
 
-Include 3 meals per day (Breakfast, Lunch, Dinner). Add Late Night only if the area and style warrants it.
-Make restaurant names realistic and specific to Tokyo. Respect dietary restrictions strictly.`
+Include 3 meals per day (Breakfast, Lunch, Dinner). Make restaurant names realistic and specific to Tokyo. Respect dietary restrictions strictly.`
 }

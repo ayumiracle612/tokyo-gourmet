@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import ItineraryFormComponent from '@/components/ItineraryForm'
 import ItineraryResult from '@/components/ItineraryResult'
+import LoadingSlideshow from '@/components/LoadingSlideshow'
 import { Itinerary, ItineraryForm } from '@/lib/types'
 import styles from './page.module.css'
 
@@ -59,14 +60,10 @@ export default function Home() {
         {/* Form or Result */}
         {!itinerary ? (
           <>
-            <ItineraryFormComponent onSubmit={handleGenerate} loading={loading} />
-            {loading && (
-              <div className={styles.loadingMsg}>
-                <div className={styles.dots}>
-                  <span /><span /><span />
-                </div>
-                <p>Consulting our Tokyo food experts…</p>
-              </div>
+            {loading ? (
+              <LoadingSlideshow />
+            ) : (
+              <ItineraryFormComponent onSubmit={handleGenerate} loading={loading} />
             )}
             {error && <div className={styles.error}>{error}</div>}
           </>
