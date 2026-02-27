@@ -85,12 +85,7 @@ export default function LoadingSlideshow() {
         ))}
       </div>
 
-      <div className={styles.status}>
-        <span className={styles.dot1} />
-        <span className={styles.dot2} />
-        <span className={styles.dot3} />
-        <span className={styles.statusText}>Crafting your Tokyo itinerary…</span>
-      </div>
+      <p className={styles.status}>Crafting your Tokyo itinerary…</p>
     </div>
   )
 }

@@ -60,8 +60,11 @@ export default function Home() {
         {/* Form or Result */}
         {!itinerary ? (
           <>
-            <ItineraryFormComponent onSubmit={handleGenerate} loading={loading} />
-            {loading && <LoadingSlideshow />}
+            {loading ? (
+              <LoadingSlideshow />
+            ) : (
+              <ItineraryFormComponent onSubmit={handleGenerate} loading={loading} />
+            )}
             {error && <div className={styles.error}>{error}</div>}
           </>
         ) : (
